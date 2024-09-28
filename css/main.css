@@ -1,0 +1,142 @@
+@import url('/css/fonts.css');
+@import url('/css/resets.css');
+
+:root {
+    --white: hsl(0, 0%, 100%);
+
+    --stone-100: hsl(30, 54%, 90%);
+    --stone-150: hsl(30, 18%, 87%);
+    --stone-600: hsl(30, 10%, 34%);
+    --stone-900: hsl(24, 5%, 18%);
+
+    --brown-800: hsl(14, 45%, 36%);
+
+    --rose-800: hsl(332, 51%, 32%);
+    --rose-50: hsl(330, 100%, 98%);
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    place-items: center;
+    color: var(--stone-600);
+}
+
+ul,
+ol {
+    padding-left: 30px;
+}
+
+.container {
+    width: 80%;
+    max-width: 700px;
+    margin-block: 2rem;
+}
+
+.block-title {
+    font-family: 'Young Serif';
+    font-weight: 500;
+    color: var(--brown-800);
+    font-size: 1.6rem;
+}
+
+& .bold-item {
+    font-weight: 700;
+}
+
+
+.food-info__title {
+    color: var(--stone-900);
+    margin: 10rem 0 1rem;
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.food-info__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.preparation-time {
+    background-color: var(--rose-50);
+    border-radius: .5rem;
+    padding: 1rem;
+    line-height: 1.8;
+    margin-block: 1.5rem;
+
+    & .preparation-time__title {
+        color: var(--rose-800);
+    }
+}
+
+.recipe-instructions__item {
+    margin-bottom: 1rem;
+}
+
+.recipe-instructions__item::marker,
+.food-info__ingredients-list::marker {
+    color: var(--rose-800);
+    font-weight: 700;
+}
+
+.nutritional-info {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.nutritional-info td {
+    text-align: center;
+    border-bottom: 1px solid var(--stone-150);
+}
+
+.food-info__table {
+    width: 100%;
+    border-collapse: collapse;
+
+    & td {
+        padding-left: 2rem;
+    }
+}
+
+.food-info__table td:nth-of-type(2) {
+    color: var(--rose-800);
+    font-weight: 800;
+}
+
+.food-info__table .tr:not(:last-child) {
+    border-bottom: 1px solid var(--stone-150);
+}
+
+@media (min-width: 475px) {
+    body {
+        background-color: var(--stone-100);
+    }
+
+    .food-info__image {
+        position: static;
+        border-radius: 1rem;
+    }
+
+    .food-info__title {
+        margin: 2.5rem 0;
+    }
+
+    .container {
+        background-color: var(--white);
+        padding: 2rem;
+        border-radius: 1rem;
+    }
+}
+
+@media (max-width: 320px) {
+    .food-info__title {
+        font-size: 24px;
+    }
+
+    .food-info__title {
+        margin-top: 8rem;
+    }
+}
